@@ -7,8 +7,9 @@ The *Glam bibliography* is a multilingual shared bibliography project dedicated 
 
 ## How to run this application on local?
 
-There are two prerequisites you need to run this application:
+There are three prerequisites you need to run this application:
 - a *MariaDB* database;
+- an *.env* file in the root of the website;
 - a *Node.js* server.
 
 First, create a database untitled *glam* in MariaDB, then:
@@ -18,7 +19,17 @@ $ cd glam
 $ mysql -u [user] -p glam < ./private/glam.sql
 ```
 
-Be sure to have *Node.js* 14.x on your computer before installing the dependencies and starting the application:
+Secondly, define five variables in the *.env* file:
+
+```
+BDD_HOST=[BDD_HOST]
+BDD_NAME=[BDD_NAME]
+BDD_PWD=[BDD_USER_PASSWORD]
+BDD_USER=[BDD_USER]
+SECRET_TOKEN=[YOUR_SECRET_TOKEN]
+```
+
+At last, be sure to have *Node.js* 14.x on your computer before installing the dependencies and starting the application:
 
 ```
 $ cd glam
