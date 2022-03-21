@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+	h1.mt-3= title
+
+	nav.nav.flex-column
+		- const types = ["art", "num", "col", "pre", "dic", "blg", "cha", "doc", "crp", "ouv", "clb", "the", "mem", "web"]
+			each type in types
+				a.nav-link(aria-current="page" href=`./add/${type}`)= t(`DOCS.${ type.toUpperCase() }`)

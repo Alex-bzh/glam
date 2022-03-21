@@ -1,0 +1,93 @@
+{
+  "AUTH": {
+    "LOGIN": "Connexion",
+    "LOGOUT": "Déconnexion",
+    "NO_EMAIL": "L’adresse e-mail renseignée ne correspond à aucun·e utilisateur·rice de l’application.",
+    "NO_PASSWORD": "Le mot de passe saisi ne correspond pas à celui renseigné dans la base de données.",
+    "NO_USER": "Il n’existe aucun·e utilisateur·rice avec ces identifiants dans la base de données de l’application.",
+    "NOT_AUTHORIZED": "L’accès est réservé. Veuillez vous enregistrer.",
+    "PASSWORD": "Mot de passe",
+    "PASSWORD_CONFIRM": "Confirmation du mot de passe"
+  },
+  "DOCS": {
+    "ADD": "Ajouter un document",
+    "ART": "Article de revue",
+    "BLG": "Billet de blog",
+    "CHA": "Chapitre d’ouvrage",
+    "CLB": "Ouvrage collectif",
+    "COL": "Article de colloque",
+    "CRP": "Corpus",
+    "DIC": "Notice d’encyclopédie ou de dictionnaire",
+    "DOC": "Document",
+    "MEM": "Mémoire",
+    "NUM": "Numéro spécial de revue",
+    "PRE": "Article de journal",
+    "OUV": "Ouvrage",
+    "THE": "Thèse",
+    "WEB": "Site Web"
+  },
+  "FIELDS": {
+    "ABSTRACT": "Résumé",
+    "AUTHOR": "Auteur",
+    "AUTHORS": "Auteurs",
+    "DATE": "Date",
+    "DOC_LANGUAGE": "Langue du document",
+    "DOI": "DOI",
+    "FIRST_NAME": "Prénom",
+    "ISSN": "ISSN",
+    "ISSUE": "Numéro",
+    "JOURNAL": "Revue",
+    "LAST_NAME": "Nom",
+    "NUMBERING": "Pagination",
+    "ONLINE": "En ligne",
+    "PAGES_FROM": "De",
+    "PAGES_TO": "À",
+    "TITLE": "Titre",
+    "VOLUME": "Volume",
+    "URL": "URL"
+  },
+  "FORMS": {
+    "REQUIRED": "Les champs marqués d’un astérisque (*) sont obligatoires.",
+    "SUBMIT": "Envoyer"
+  },
+  "GLOBAL": {
+    "CONNECT": "Connexion",
+    "DISCONNECT": "Déconnexion",
+    "SITE": "GLAM",
+    "SITE_EXP": "Bibliographie GLAM"
+  },
+  "META": {
+    "SITE_KEYWORDS": "",
+    "TITLE_CONNECT": "Connexion",
+    "DESC_CONNECT": "Connexion",
+    "TITLE_COLLABORATORS": "Contributeurs",
+    "DESC_COLLABORATORS": "Contributeurs",
+    "TITLE_CONTACT-US": "Contacts",
+    "DESC_CONTACT-US": "Contacts",
+    "TITLE_DOCUMENTATION": "Documentation",
+    "DESC_DOCUMENTATION": "Documentation",
+    "TITLE_HOME": "Accueil",
+    "DESC_HOME": "Accueil du site GLAM",
+    "TITLE_LINKS": "Liens",
+    "DESC_LINKS": "Liens",
+    "TITLE_PRESENTATION": "Qui sommes-nous ?",
+    "DESC_PRESENTATION": "Qui sommes-nous ?"
+  },
+  "NAV": {
+    "CONTACT-US": "Contacts",
+    "COLLABORATORS": "Collaborateurs",
+    "DOCUMENTATION": "Documentation",
+    "HOME": "Accueil",
+    "LINKS": "Liens",
+    "NAV": "Navigation",
+    "NAV_LG": "Langues",
+    "PRESENTATION": "Qui sommes-nous ?"
+  },
+  "USERS": {
+    "ADD": "Ajouter un utilisateur",
+    "EMAIL": "Adresse email",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom",
+    "PERS_INFOS": "Informations personnelles"
+  }
+}

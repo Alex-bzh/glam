@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+  h1.mt-3= title
+  form(
+    method= "post"
+    action= "/users/add"
+  )
+    fieldset
+      legend= t("USERS.PERS_INFOS")
+      div.row.mb-3
+        div.col
+          input.form-control(
+            name= "firstname"
+            placeholder= t("USERS.FIRST_NAME")
+            aria-label= t("USERS.FIRST_NAME")
+          )
+        div.col
+          input.form-control(
+            name= "lastname"
+            placeholder= t("USERS.LAST_NAME")
+            aria-label= t("USERS.LAST_NAME")
+          )
+      div.input-group.mb-3
+        span.input-group-text#arobase= "@"
+        input.form-control#email(
+          type= "email"
+          name= "email"
+          placeholder= t("USERS.EMAIL")
+          aria-label= t("USERS.EMAIL")
+          aria-describedby= "arobase"
+        )
+      div.row.mb-3
+        div.col
+          input.form-control#password(
+            type= "password"
+            name= "password"
+            placeholder= t("AUTH.PASSWORD")
+            aria-label= t("AUTH.PASSWORD")
+          )
+        div.col
+          input.form-control(
+            type= "password"
+            placeholder= t("AUTH.PASSWORD_CONFIRM")
+            aria-label= t("AUTH.PASSWORD_CONFIRM")
+          )
+      button.btn.btn-primary(type="submit")= t("FORMS.SUBMIT")

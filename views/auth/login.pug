@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1.mt-3= title
+  form(
+    method= "post"
+    action= "/users/login"
+  )
+    div.input-group.mb-3
+      span.input-group-text#arobase= "@"
+      input.form-control#email(
+        type= "email"
+        name= "email"
+        placeholder= t("USERS.EMAIL")
+        aria-label= t("USERS.EMAIL")
+        aria-describedby= "arobase"
+      )
+    div.mb-3
+      input.form-control#password(
+        type= "password"
+        name= "password"
+        placeholder= t("AUTH.PASSWORD")
+        aria-label= t("AUTH.PASSWORD")
+      )
+    button.btn.btn-primary(type="submit")= t("FORMS.SUBMIT")
