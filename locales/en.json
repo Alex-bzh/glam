@@ -1,0 +1,93 @@
+{
+  "AUTH": {
+    "LOGIN": "Connection",
+    "LOGOUT": "Logout",
+    "NO_EMAIL": "The email address does not correspond to any user.",
+    "NO_PASSWORD": "The password does not match the one associated with this user.",
+    "NO_USER": "There is no user with those credentials in the database.",
+    "NOT_AUTHORIZED": "This area is restricted. Please sign in.",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Confirm password"
+  },
+  "DOCS": {
+    "ADD": "Add a new document",
+    "ART": "Article",
+    "BLG": "Blog post",
+    "CHA": "Book chapter",
+    "CLB": "Collective work",
+    "COL": "Conference paper",
+    "CRP": "Corpus",
+    "DIC": "Encyclopedia or dictionary entry",
+    "DOC": "Document",
+    "MEM": "Dissertation",
+    "NUM": "Special issue of journal",
+    "PRE": "Newspaper article",
+    "OUV": "Publication",
+    "THE": "Thesis",
+    "WEB": "Website"
+  },
+  "FIELDS": {
+    "ABSTRACT": "Abstract",
+    "AUTHOR": "Author",
+    "AUTHORS": "Authors",
+    "DATE": "Date",
+    "DOC_LANGUAGE": "Language of the document",
+    "DOI": "DOI",
+    "FIRST_NAME": "First name",
+    "ISSN": "ISSN",
+    "ISSUE": "Issue",
+    "JOURNAL": "Journal",
+    "LAST_NAME": "Last name",
+    "NUMBERING": "Numbering",
+    "ONLINE": "Online",
+    "PAGES_FROM": "From",
+    "PAGES_TO": "To",
+    "TITLE": "Title",
+    "VOLUME": "Volume",
+    "URL": "URL"
+  },
+  "FORMS": {
+    "REQUIRED": "Fields with an asterisk (*) are mandatory.",
+    "SUBMIT": "Submit"
+  },
+  "GLOBAL": {
+    "CONNECT": "Connection",
+    "DISCONNECT": "Disconnection",
+    "SITE": "GLAM",
+    "SITE_EXP": "GLAM Bibliography"
+  },
+  "META": {
+    "SITE_KEYWORDS": "",
+    "TITLE_CONNECT": "Connection",
+    "DESC_CONNECT": "Connection",
+    "TITLE_COLLABORATORS": "Collaborators",
+    "DESC_COLLABORATORS": "Collaborators",
+    "TITLE_CONTACT-US": "Contact us",
+    "DESC_CONTACT-US": "Contact us",
+    "TITLE_DOCUMENTATION": "Documentation",
+    "DESC_DOCUMENTATION": "Documentation",
+    "TITLE_HOME": "Home",
+    "DESC_HOME": "Home of the GLAM website",
+    "TITLE_LINKS": "Links",
+    "DESC_LINKS": "Links",
+    "TITLE_PRESENTATION": "Who are we?",
+    "DESC_PRESENTATION": "Who are we?"
+  },
+  "NAV": {
+    "CONTACT-US": "Contact us",
+    "COLLABORATORS": "Collaborators",
+    "DOCUMENTATION": "Documentation",
+    "HOME": "Home",
+    "LINKS": "Links",
+    "NAV": "Navigation",
+    "NAV_LG": "Languages",
+    "PRESENTATION": "Who are we?"
+  },
+  "USERS": {
+    "ADD": "Insert a new user",
+    "EMAIL": "E-mail address",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "PERS_INFOS": "Personal informations"
+  }
+}

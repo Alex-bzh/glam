@@ -1,0 +1,136 @@
+extends form
+
+block append content
+
+	form.mt-3(action= "/docs/add" method= "post")
+		input#ref_type(type= "hidden" name= "ref_type" value= "art")
+		input#nAuthors(type= "hidden" name="nAuthors" value= "1")
+		p.lead= t("FORMS.REQUIRED")
+
+		<!-- online -->
+		div.row.mb-3
+			div.col-sm-12
+				div.form-check.form-switch
+					input#online.form-check-input(type= "checkbox" role= "switch" name= "online")
+					label.form-check-label.fw-bold(for= "online")= t("FIELDS.ONLINE")
+
+		<!-- authors -->
+		fieldset#authors
+			input#ref_role(type= "hidden" name= "ref_roles" value= "1")
+			div.row.mb-3
+				label.col-sm-2.col-form-label.fw-bold(for= "firstname")= t("FIELDS.AUTHORS") + "*"
+				div.col-sm-5
+					input#firstname.form-control(
+						type= "text"
+						name= "firstnames"
+						placeholder= t("FIELDS.FIRST_NAME")
+						aria-label= "firstname"
+						required= "required"
+					)
+				div.col-sm-5
+					div.input-group
+						input#lastname.form-control(
+							type="text"
+							name= "lastnames"
+							placeholder= t("FIELDS.LAST_NAME")
+							aria-label= "lastname"
+							required= "required"
+						)
+						button#add-author.btn.btn-outline-primary(
+							type= "button"
+							onclick= "addAuthor()"
+						)
+							svg.bi.bi-person-plus-fill(
+								xmlns= "http://www.w3.org/2000/svg"
+								width= "16" height= "16"
+								fill= "currentColor"
+								viewBox= "0 0 16 16"
+							)
+								path(d= "M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")
+								path(fill-rule= "evenodd" d= "M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z")
+
+		<!-- title -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "title")= t("FIELDS.TITLE") + "*"
+			div.col-sm-10
+				input#title.form-control(type="text" name= "title" required= "required")
+
+		<!-- abstract -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "abstract")= t("FIELDS.ABSTRACT")
+			div.col-sm-10
+				textarea#abstract.form-control(rows= "5" name= "abstract")
+
+		<!-- language -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "doc-language")= t("FIELDS.DOC_LANGUAGE") + "*"
+			div.col-sm-10
+				select.form-select.mb-3(name="ref_lang" required= "required")
+					option(selected= "selected" value="136")= "French (fre)"
+					each language in languages
+						option(value= language.id_language)= `${ language.language } (${ language.iso })`
+
+		<!-- journal -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "journal")= t("FIELDS.JOURNAL") + "*"
+			div.col-sm-10
+				input#journal.form-control(type="text" name= "title_alternate" required= "required")
+
+		<!-- materiality -->
+		fieldset#materiality
+
+			<!-- volume -->
+			div.row.mb-3
+				label.col-sm-2.col-form-label.fw-bold(for= "volume")= t("FIELDS.VOLUME") + "*"
+				div.col-sm-10
+					input#volume.form-control(type="number" min= "1" name= "volume" required= "required")
+
+			<!-- issue -->
+			div.row.mb-3
+				label.col-sm-2.col-form-label.fw-bold(for= "issue")= t("FIELDS.ISSUE")
+				div.col-sm-10
+					input#issue.form-control(type="number" min= "1" name= "issue")
+
+			<!-- numbering -->
+			div#numbering.row.mb-3
+				label.col-sm-2.col-form-label.fw-bold(for= "pages_from")= t("FIELDS.NUMBERING") + "*"
+				div.col-sm-5
+					input#pages_from.form-control(
+						type= "number" min= "1"
+						name= "pages_from"
+						placeholder= t("FIELDS.PAGES_FROM")
+						required= "required"
+					)
+				div.col-sm-5
+					input#pages_to.form-control(
+						type="number" min= "1"
+						name= "pages_to"
+						placeholder= t("FIELDS.PAGES_TO")
+						required= "required"
+					)
+
+		<!-- date -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "date")= t("FIELDS.DATE") + "*"
+			div.col-sm-10
+				input#date.form-control(type="date" name= "date" required= "required")
+
+		<!-- doi -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "doi")= t("FIELDS.DOI")
+			div.col-sm-10
+				input#doi.form-control(type="text" name= "doi")
+
+		<!-- issn -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "issn")= t("FIELDS.ISSN")
+			div.col-sm-10
+				input#issn.form-control(type="text" name= "issn")
+
+		<!-- url -->
+		div#link.row.mb-3.d-none
+			label.col-sm-2.col-form-label.fw-bold(for= "url")= t("FIELDS.URL") + "*"
+			div.col-sm-10
+				input#url.form-control(type="url" name= "url")
+
+		button.btn.btn-primary(type="submit")= t("FORMS.SUBMIT")
