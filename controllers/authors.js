@@ -1,4 +1,5 @@
 //controllers/authors.js
+const db = require('../services/db');
 
 // add an author
 async function addAuthor(author) {
