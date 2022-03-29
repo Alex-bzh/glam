@@ -65,7 +65,7 @@ block append content
 		div.row.mb-3
 			label.col-sm-2.col-form-label.fw-bold(for= "doc-language")= t("FIELDS.DOC_LANGUAGE") + "*"
 			div.col-sm-10
-				select.form-select.mb-3(name="ref_lang" required= "required")
+				select#doc-language.form-select.mb-3(name="ref_lang" required= "required")
 					option(selected= "selected" value="136")= "French (fre)"
 					each language in languages
 						option(value= language.id_language)= `${ language.language } (${ language.iso })`
@@ -132,5 +132,14 @@ block append content
 			label.col-sm-2.col-form-label.fw-bold(for= "url")= t("FIELDS.URL") + "*"
 			div.col-sm-10
 				input#url.form-control(type="url" name= "url")
+
+		<!-- languages topics -->
+		div.row.mb-3
+			label.col-sm-2.col-form-label.fw-bold(for= "languages-topics")= t("FIELDS.LANGUAGES_TOPICS")
+			div.col-sm-10
+				select#languages-topics.form-select.mb-3(name="languages_topics" multiple="multiple")
+					option(selected= "selected" value="136")= "French (fre)"
+					each language in languages
+						option(value= language.id_language)= `${ language.language } (${ language.iso })`
 
 		button.btn.btn-primary(type="submit")= t("FORMS.SUBMIT")
