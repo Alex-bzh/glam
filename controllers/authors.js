@@ -11,21 +11,31 @@ async function addAuthors(authorsList, ref_document) {
     // link between doc and authors
     await authors.addDocumentAuthor(ref_document, ref_author, author.ref_role);
   }
+
 }
 
 // map authors' firstnames, lastnames and roles
 async function buildAuthors(firstnames, lastnames, ref_roles) {
 
-	// object with 2 keys: firstname & lastname
-	const authors = firstnames.map(function(item, idx) {
-		return {
-			"firstname": item,
-			"lastname": lastnames[idx],
-			"ref_role": ref_roles[idx]
-		};
-	});
+	if (typeof(firstnames) == "object" && typeof(lastnames) == "object") {
 
-	return authors;
+		// object with 2 keys: firstname & lastname
+		return firstnames.map(function(item, idx) {
+			return {
+				"firstname": item,
+				"lastname": lastnames[idx],
+				"ref_role": ref_roles[idx]
+			};
+		});
+
+	} else {
+		return [{
+			"firstname": firstnames,
+			"lastname": lastnames,
+			"ref_role": ref_roles
+		}];
+	}
+
 }
 
 module.exports = {
