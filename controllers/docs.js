@@ -1,5 +1,6 @@
 // controllers/docs.js
 const docs = require('../models/docs');
+const langs = require('../models/languages');
 
 // add a doc
 const addDoc = async (req, res, next) => {
@@ -14,7 +15,7 @@ const addDoc = async (req, res, next) => {
 const docForm = async (req, res, next) => {
 	try {
 		const type = req.params.type;
-		const languages = await docs.getLanguages();
+		const languages = await langs.getLanguages();
 		res.render(`docs/${ type }`, {
 			connected: req.loggedIn,
 			languages: languages,

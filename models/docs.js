@@ -1,17 +1,7 @@
 //models/docs.js
 const authors = require('../controllers/authors');
+const languages = require('../controllers/languages');
 const db = require('../services/db');
-
-// add doc & authors
-async function addDocumentAuthor(ref_document, ref_author, ref_role) {
-
-  await db.query(
-    `INSERT INTO documents_authors (ref_document, ref_author, ref_role)
-    VALUES (?, ?, ?);`,
-    [ref_document, ref_author, ref_role]
-  );
-
-}
 
 // POST doc
 async function addDoc(data) {
@@ -106,14 +96,15 @@ async function addDoc(data) {
   // make an array of authors w/ roles
   const authorsList = await authors.buildAuthors(data.firstnames, data.lastnames, data.ref_roles);
 
-  for (author of authorsList) {
-    // insert unknown authors
-    if (!await authors.isAuthor(author)) await authors.addAuthor(author);
-    // id authors
-    const ref_author = await authors.getAuthorId(author);
-    // link between doc and authors
-    await addDocumentAuthor(ref_document, ref_author, author.ref_role);
-  }
+  // add authors
+  await authors.addAuthors(authorsList, ref_document);
+
+  /*******************
+  * Languages-topics *
+  *******************/
+
+  // add languages-topics
+  await languages.addLanguagesTopics(data.languages_topics, ref_document);
 
   return "Doc created";
 
@@ -156,20 +147,7 @@ async function getAllDocs() {
   return results;
 }
 
-// all languages
-async function getLanguages() {
-
-  const results = await db.query(
-    `SELECT id_language, language, iso
-    FROM languages
-    ORDER BY language ASC;`
-  );
-
-  return results;
-}
-
 module.exports = {
   addDoc,
-  getAllDocs,
-  getLanguages
+  getAllDocs
 };
