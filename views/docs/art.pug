@@ -135,9 +135,9 @@ block append content
 
 		<!-- languages topics -->
 		div.row.mb-3
-			label.col-sm-2.col-form-label.fw-bold(for= "languages-topics")= t("FIELDS.LANGUAGES_TOPICS")
+			label.col-sm-2.col-form-label.fw-bold(for= "languages-topics")= t("FIELDS.LANGUAGES_TOPICS") + "*"
 			div.col-sm-10
-				select#languages-topics.form-select.mb-3(name="languages_topics" multiple="multiple")
+				select#languages-topics.form-select.mb-3(name="languages_topics" multiple="multiple" required="required")
 					option(selected= "selected" value="136")= "French (fre)"
 					each language in languages
 						option(value= language.id_language)= `${ language.language } (${ language.iso })`
