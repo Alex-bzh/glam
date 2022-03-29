@@ -1,15 +1,16 @@
 //controllers/authors.js
-const db = require('../services/db');
+const authors = require('../models/authors');
 
-// add an author
-async function addAuthor(author) {
+async function addAuthors(authorsList, ref_document) {
 
-	const results = await db.query(
-		`INSERT INTO authors (firstname, lastname)
-		VALUES (?, ?);`,
-		[author.firstname, author.lastname]
-	);
-
+  for (author of authorsList) {
+    // insert unknown authors
+    if (!await authors.isAuthor(author)) await authors.addAuthor(author);
+    // id authors
+    const ref_author = await authors.getAuthorId(author);
+    // link between doc and authors
+    await authors.addDocumentAuthor(ref_document, ref_author, author.ref_role);
+  }
 }
 
 // map authors' firstnames, lastnames and roles
@@ -27,36 +28,7 @@ async function buildAuthors(firstnames, lastnames, ref_roles) {
 	return authors;
 }
 
-// get author id
-async function getAuthorId(author) {
-
-	const results = await db.query(
-		`SELECT id_author
-		FROM authors
-		WHERE firstname = ? AND lastname = ?;`,
-		[author.firstname, author.lastname]
-	);
-
-	return results[0].id_author;
-}
-
-// author exists?
-async function isAuthor(author) {
-
-	const results = await db.query(
-		`SELECT id_author
-		FROM authors
-		WHERE firstname = ? AND lastname = ?;`,
-		[author.firstname, author.lastname]
-	);
-	if (results.length) return true;
-	else return false;
-
-}
-
 module.exports = {
-	addAuthor,
-	buildAuthors,
-	getAuthorId,
-	isAuthor
+	addAuthors,
+	buildAuthors
 };
