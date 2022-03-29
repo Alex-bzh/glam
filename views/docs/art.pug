@@ -3,7 +3,7 @@ extends form
 block append content
 
 	form.mt-3(action= "/docs/add" method= "post")
-		input#ref_type(type= "hidden" name= "ref_type" value= "art")
+		input#ref_type(type= "hidden" name= "ref_type" value= "1")
 		input#nAuthors(type= "hidden" name="nAuthors" value= "1")
 		p.lead= t("FORMS.REQUIRED")
 
