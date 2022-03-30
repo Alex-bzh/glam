@@ -28,8 +28,8 @@
   },
   "FIELDS": {
     "ABSTRACT": "Résumé",
-    "AUTHOR": "Auteur",
-    "AUTHORS": "Auteurs",
+    "AUTHOR": "Auteur·rice",
+    "AUTHORS": "Auteur·rices",
     "DATE": "Date",
     "DOC_LANGUAGE": "Langue du document",
     "DOI": "DOI",
@@ -64,8 +64,8 @@
     "SITE_KEYWORDS": "",
     "TITLE_CONNECT": "Connexion",
     "DESC_CONNECT": "Connexion",
-    "TITLE_COLLABORATORS": "Contributeurs",
-    "DESC_COLLABORATORS": "Contributeurs",
+    "TITLE_COLLABORATORS": "Contributeur·rices",
+    "DESC_COLLABORATORS": "Contributeur·rices",
     "TITLE_CONTACT-US": "Contacts",
     "DESC_CONTACT-US": "Contacts",
     "TITLE_DOCUMENTATION": "Documentation",
@@ -79,7 +79,7 @@
   },
   "NAV": {
     "CONTACT-US": "Contacts",
-    "COLLABORATORS": "Collaborateurs",
+    "COLLABORATORS": "Collaborateur·rices",
     "DOCUMENTATION": "Documentation",
     "HOME": "Accueil",
     "LINKS": "Liens",
@@ -88,7 +88,7 @@
     "PRESENTATION": "Qui sommes-nous ?"
   },
   "USERS": {
-    "ADD": "Ajouter un utilisateur",
+    "ADD": "Ajouter un·e utilisateur·rice",
     "EMAIL": "Adresse email",
     "FIRST_NAME": "Prénom",
     "LAST_NAME": "Nom",
