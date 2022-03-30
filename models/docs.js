@@ -1,6 +1,7 @@
 //models/docs.js
 const authors = require('../controllers/authors');
 const languages = require('../controllers/languages');
+const themes = require('../controllers/themes');
 const db = require('../services/db');
 
 // POST doc
@@ -24,6 +25,7 @@ async function addDoc(data) {
   const doi             = (typeof(data.doi)             == "undefined" || !data.doi             || !data.doi.length)            ? ""  : data.doi;
   const issn            = (typeof(data.issn)            == "undefined" || !data.issn            || !data.issn.length)           ? ""  : data.issn;
   const url             = (typeof(data.url)             == "undefined" || !data.url             || !data.url.length)            ? ""  : data.url;
+  const genderStudies   = (typeof(data.genderStudies)   == "undefined" || !data.genderStudies   || !data.genderStudies.length)  ? []  : data.genderStudies;
 
   // special variables
   const date            = data.date.split("-");
@@ -105,6 +107,17 @@ async function addDoc(data) {
 
   // add languages-topics
   await languages.addLanguagesTopics(data.languages_topics, ref_document);
+
+  /*********
+  * Themes *
+  *********/
+
+  // add themes: general
+  await themes.addDocumentThemes(data.themes, ref_document)
+  // add themes: gender studies
+  await themes.addDocumentThemes(genderStudies, ref_document)
+  // add themes: linguistics
+  await themes.addDocumentThemes(data.linguistics, ref_document)
 
   return "Doc created";
 

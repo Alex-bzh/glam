@@ -1,6 +1,7 @@
 // controllers/docs.js
 const docs = require('../models/docs');
 const langs = require('../models/languages');
+const themes = require('../models/themes');
 
 // add a doc
 const addDoc = async (req, res, next) => {
@@ -15,12 +16,14 @@ const addDoc = async (req, res, next) => {
 const docForm = async (req, res, next) => {
 	try {
 		const type = req.params.type;
-		const languages = await langs.getLanguages();
 		res.render(`docs/${ type }`, {
 			connected: req.loggedIn,
-			languages: languages,
-			title: req.t('DOCS.ADD'),
+			genderStudies: await themes.getThemes(1),
+			languages: await langs.getLanguages(),
+			linguistics: await themes.getThemes(2),
 			subtitle: req.t(`DOCS.${ type.toUpperCase() }`),
+			themes: await themes.getThemes(0),
+			title: req.t('DOCS.ADD'),
 			type: type
 		});
 	} catch (err) {
