@@ -166,4 +166,16 @@ block append content
           each theme in linguistics
             option(value= theme.id_theme)= theme.theme
 
+    <!-- related fields -->
+    div.row.mb-3
+      label.col-sm-2.col-form-label.fw-bold(for= "related_fields")= t("FIELDS.RELATED_FIELDS")
+      div.col-sm-10
+        select#related_fields.form-select.mb-3(name="related_fields" multiple="multiple")
+          each field in related_fields
+            option(value= field.id_field)= "- " + field.field
+            each subField in field.related
+              option(value= subField.id_field)= "-- " + subField.field
+              each subSubField in subField.related
+                option(value= subSubField.id_field)= "--- " + subSubField.field
+
     button.btn.btn-primary(type="submit")= t("FORMS.SUBMIT")

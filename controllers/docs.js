@@ -1,5 +1,6 @@
 // controllers/docs.js
 const docs = require('../models/docs');
+const fields = require('../controllers/fields');
 const langs = require('../models/languages');
 const themes = require('../models/themes');
 
@@ -14,21 +15,27 @@ const addDoc = async (req, res, next) => {
 
 // form to add a document of any type
 const docForm = async (req, res, next) => {
+
 	try {
+
 		const type = req.params.type;
+
 		res.render(`docs/${ type }`, {
 			connected: req.loggedIn,
 			genderStudies: await themes.getThemes(1),
 			languages: await langs.getLanguages(),
 			linguistics: await themes.getThemes(2),
+			related_fields: await fields.buildFieldsTree(),
 			subtitle: req.t(`DOCS.${ type.toUpperCase() }`),
 			themes: await themes.getThemes(0),
 			title: req.t('DOCS.ADD'),
 			type: type
 		});
+
 	} catch (err) {
 		next(err);
 	}
+
 }
 
 // get all the documents
