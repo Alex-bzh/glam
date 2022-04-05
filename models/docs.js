@@ -113,13 +113,20 @@ async function addDoc(data) {
   *********/
 
   // add themes: general
-  await themes.addDocumentThemes(data.themes, ref_document)
+  await themes.addDocumentThemes(data.themes, ref_document);
   // add themes: gender studies
-  await themes.addDocumentThemes(genderStudies, ref_document)
+  await themes.addDocumentThemes(genderStudies, ref_document);
   // add themes: linguistics
-  await themes.addDocumentThemes(data.linguistics, ref_document)
+  await themes.addDocumentThemes(data.linguistics, ref_document);
 
   return "Doc created";
+
+  /*********
+  * Fields *
+  *********/
+
+  // add related fields
+  await fields.addDocumentFields(data.related_fields, ref_document);
 
 }
 
